@@ -295,7 +295,7 @@ int lastFaultCell = -1;
 int adcFailureTest = 0;
 int commsFailureTest = 0;
 
-// Task 6 - Analytics
+// Analytics
 unsigned long totalFaultCount = 0;
 unsigned long faultEventCount = 0;
 int previousFaultDetected = 0;
