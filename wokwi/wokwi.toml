@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/BMS_project.ino.bin'
+elf = 'build/BMS_project.ino.elf'

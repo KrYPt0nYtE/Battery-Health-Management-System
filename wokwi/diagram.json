@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "Kaushal Naik",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 427.24, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -145.3, "left": 67, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -145.3, "left": 153.4, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot3", "top": -145.3, "left": 239.8, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot4", "top": -145.3, "left": 326.2, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -143.8, "left": 470.4, "attrs": {} },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "relayFeedback",
+      "top": -143.8,
+      "left": 720,
+      "attrs": {
+      "value": "",
+      "bounce": "0"
+               }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -32,
+      "left": 600.8,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot4:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot3:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot3:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot4:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:34", "green", [ "v0" ] ],
+    [ "pot2:SIG", "esp:35", "green", [ "v0" ] ],
+    [ "pot3:SIG", "esp:32", "green", [ "v0" ] ],
+    [ "pot4:SIG", "esp:33", "green", [ "v0" ] ],
+    [ "relay1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "relay1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "relay1:IN", "esp:19", "green", [ "h0" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h0" ] ],
+    [ "relayFeedback:2", "esp:18", "green", [] ],
+    [ "relayFeedback:1", "esp:GND.2", "black", [] ],
+    [ "relayFeedback:3", "esp:3V3", "red", [] ]
+  ],
+  "dependencies": {}
+}
