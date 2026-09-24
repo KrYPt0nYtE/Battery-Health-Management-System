@@ -1,4 +1,4 @@
-//Task 6 - Blynk IOT Enterprise 
+//Battery Management System Engine
 
 #define NUM_CELLS 4
 #define RELAY 19
